@@ -35,11 +35,11 @@ func BootConfig(db *gorose.Engin) *AppConfig {
 }
 
 func loadConfigFromDb(conf *AppConfig,db *gorose.Engin) {
-	v, err := db.NewOrm().Table("config").Pluck("value", "module")
-	if err != nil {
-		panic(err.Error())
-	}
-	for k2,v2:= range v.(map[interface{}]interface{}){
-		(*conf)[k2.(string)] = v2
-	}
+	//v, err := db.NewOrm().Table("config").Pluck("value", "module")
+	//if err != nil {
+	//	panic(err.Error())
+	//}
+	//for k2,v2:= range v.(map[interface{}]interface{}){
+	//	(*conf)[k2.(string)] = v2
+	//}
 }

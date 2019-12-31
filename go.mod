@@ -20,7 +20,7 @@ require (
 	github.com/gohouse/file v0.0.0-20191230075216-864710533ca2
 	github.com/gohouse/gopass v0.0.0-20191227033432-9361be917f12
 	github.com/gohouse/gorose/v2 v2.1.4-rc.0.20191228024627-ac07c107a0cd
-	github.com/gohouse/gosms v0.0.0-20191230071542-4ae341b3fb53
+	github.com/gohouse/gosms v0.0.0-20191230115905-bef217064182
 	github.com/gohouse/jwt v0.0.0-20191206043438-bdc30608a8d9
 	github.com/gohouse/random v0.0.0-20191207080041-ad28f976d474
 	github.com/gohouse/t v0.0.6-0.20191228054421-d4c210588a14

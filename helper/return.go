@@ -44,3 +44,20 @@ func FailReturn(args ...interface{}) ApiReturn {
 	}
 	return NewApiReturn(code, nil, msg)
 }
+
+func QueryReturn(res interface{}, err error) ApiReturn {
+	if err != nil {
+		return FailReturn(err.Error())
+	}
+	return SuccessReturn(res)
+}
+
+func ExecReturn(aff int64, err error) ApiReturn {
+	if err != nil {
+		return FailReturn(err.Error())
+	}
+	if aff == 0 {
+		return FailReturn("操作失败")
+	}
+	return SuccessReturn()
+}

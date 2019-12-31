@@ -17,13 +17,6 @@ http_port = "8088"
     # 同时可以自定义持久化存储器,具体参考: https://github.com/gohouse/e
     error_log_file = "error.log"
 
-[database]
-    driver = "mysql" # 数据库驱动
-    dsn = "root:root@tcp(localhost:3306)/novel?charset=utf8" # dsn链接
-    setMaxOpenConns = 300 # 连接池 - 最大打开连接数
-    setMaxIdleConns = 50  # 连接池 - 最大空闲连接数
-    prefix = "pre_"  # 表前缀
-
 [casbin_model]
     # [request_definition]
     r = "sub, obj, act"
