@@ -1,0 +1,58 @@
+[site_info]
+# 运行环境: local(本地); test(测试); beta(预生产); release(正式)
+env = "local"
+# http端口
+http_port = "8088"
+
+[jwt]
+    # 密钥,随机字符串
+    secret = "secret_strings_xxxxxxxxxxxxxxxxxx"
+    # token生效时间
+    expire = 360000000
+
+[error]
+    # 错误堆栈记录层数
+    error_stack_layer = 3
+    # 调用错误的时候,错误日志持久化,如果为空,则不持久化,如果设置了,则默认持久化到文件.
+    # 同时可以自定义持久化存储器,具体参考: https://github.com/gohouse/e
+    error_log_file = "error.log"
+
+[database]
+    driver = "mysql" # 数据库驱动
+    dsn = "root:root@tcp(localhost:3306)/novel?charset=utf8" # dsn链接
+    setMaxOpenConns = 300 # 连接池 - 最大打开连接数
+    setMaxIdleConns = 50  # 连接池 - 最大空闲连接数
+    prefix = "pre_"  # 表前缀
+
+[casbin_model]
+    # [request_definition]
+    r = "sub, obj, act"
+    # [policy_definition]
+    p = "sub, obj, act"
+    # [role_definition]
+    g = "_, _"
+    # [policy_effect]
+    e = "some(where (p.eft == allow))"
+    # [matchers]
+    m = "g(r.sub, p.sub) && r.obj == p.obj && r.act == p.act"
+
+# 阿里云国内短信配置 https://help.aliyun.com/document_detail/112150.html?spm=a2c4g.11186623.6.655.20cb50a4cD4nSE
+[AliyunOptions]
+    AccessKeyId = "LTAI4Fxxxxxxxxxxxxxx"
+    AccessSecret = "U4UWWa3xxxxxxxxxxxx"
+    SignName = "xxx科技公司"
+    TemplateCode = "SMS_1800000"
+
+# Twilio国际短信服务商配置 https://www.twilio.com/
+[TwilioOptions]
+    AccessKeyId = "ACxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    AccessSecret = "a18xxxxxxxxxxxxxxxxxxxxx"
+    From = "+12000000000"   # 发送服务号,这个是收费的,不像国内短信服务商,随机号码
+    Template = "您的验证码是: %s" # 短信模板,这个模板比较自由,随意定制
+
+# 阿里云oss https://help.aliyun.com/document_detail/32145.html?spm=a2c4g.11186623.2.26.46a91c62ssmNU1#concept-32145-zh
+[AliyunOSS]
+    AccessKeyId = "LTAI4Fxxxxxxxxxxxxxx"
+    AccessSecret = "U4UWWa3xxxxxxxxxxxx"
+    Endpoint = "oss-cn-hongkong.aliyuncs.com"   # 服务节点,示例是香港,杭州就把hongkong改成hangzhou,具体参考官网
+    DefaultBucket = "xxxxx"     # xxxxxx 为buckets名字
