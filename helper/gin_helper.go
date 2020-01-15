@@ -91,6 +91,10 @@ func GetParam(c *gin.Context, field string) string {
 		if res, ok := c.GetPostForm(field); ok {
 			return res
 		}
+	default:
+		if res := c.Param(field); res != "" {
+			return res
+		}
 	}
 	return ""
 }
