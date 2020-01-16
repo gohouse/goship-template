@@ -45,6 +45,7 @@ func FailReturn(args ...interface{}) ApiReturn {
 	return NewApiReturn(code, nil, msg)
 }
 
+// QueryReturn 返回的语法糖,可以处理成功或失败的查询处理
 func QueryReturn(res interface{}, err error) ApiReturn {
 	if err != nil {
 		return FailReturn(err.Error())
@@ -52,6 +53,7 @@ func QueryReturn(res interface{}, err error) ApiReturn {
 	return SuccessReturn(res)
 }
 
+// ExecReturn 返回的语法糖,可以处理成功或失败的入库或更改处理
 func ExecReturn(aff int64, err error) ApiReturn {
 	if err != nil {
 		return FailReturn(err.Error())
