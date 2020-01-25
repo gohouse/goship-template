@@ -14,7 +14,7 @@ require (
 	github.com/go-openapi/spec v0.19.4 // indirect
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/gohouse/casbin-gorose-adapter v0.0.0-20191208061121-6dd3452c9191
-	github.com/gohouse/converter v0.0.4-0.20191210024518-431d33cc196a
+	github.com/gohouse/converter v0.0.4-0.20200101053735-0a8cc686f451
 	github.com/gohouse/date v0.0.0-20191203070644-0e6619197ef8
 	github.com/gohouse/e v0.0.3-rc.0.20191220030537-d51bfe21ee26
 	github.com/gohouse/file v0.0.0-20191230075216-864710533ca2
